@@ -1,4 +1,10 @@
 from src import NSBS2, max_sum, add_numbers
+from random import randint
+
+def rand_grid(rand_min: int, rand_max:int, n:int) -> list[list[int]]:
+    return [[randint(rand_min, rand_max) for _ in range(n)],
+            [randint(rand_min, rand_max) for _ in range(n)]]
+
 
 def _as_grid(data: list[int] | list[list[int]]) -> list[list[int]]:
     if not data: return []
@@ -41,4 +47,4 @@ def view(lst: list[list[int]]) -> None:
     print("\nAdds number:")
     print_array(adds)
 
-    print(f'\nSum of non adjacent: {sum(adds)}')
+    print(f'\nSum of non-adjacent: {sum(adds)}')
